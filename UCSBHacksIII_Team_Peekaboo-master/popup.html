@@ -1,0 +1,183 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Peekaboo</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type='text/javascript' src='jquery-3.1.1.min.js'></script>
+	<!-- 		<script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ -->
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+	<script type="text/javascript" src="popup.js"></script>
+	<script type='text/javascript' src="scale.js"></script>
+</head>
+
+<body id="ourBody">
+	<!-- Nav -->
+	<nav>
+		<div class="my_navebar_wrapper nav-wrapper" style="">
+			<ul class="left" id="nav-mobile">
+				<!-- <li>
+					<img class="logo" src="icon.png" alt="Peek">
+				</li> -->
+				<li>
+					<a data-activates="slide-out" class="button-collapse" href="#">
+						<i class="large material-icons waves-effect" style="font-size: 250%">menu</i>
+					</a>
+				</li>
+			</ul>
+			<form class="center">
+				<div class="input-group">
+					<input id="search" type="search" class="form-control" placeholder="Find" style="color: white;" />
+				</div>
+			</form>
+		</div>
+	</nav>
+
+	<!-- Views -->
+	<div id="previewGroup" style='display: inline-block'></div>
+	<div id="previewCarousel" class="carousel" style='display: none'></div>
+	<ul id="previewList" style='display: none'></ul>
+
+	<!-- Slide-In Side Nav -->
+	<ul id="slide-out" class="side-nav">
+		<li>
+			<div class="userView">
+				<div class="background"><img src="icon.png" /></div>
+				<img class="circle" src="icon.png" style="border: solid white 3px; height: 50%; width: 50%;" />
+				<p><span class="white-text name" style="font-size: 300%; margin: 20px">Peek</span></p>
+				<!-- <a href="#!email"><span class="white-text email">example@gmail.com</span></a> -->
+			</div>
+		</li>
+
+		<!-- Collapse Views -->
+		<li>
+			<ul class="collapsible popout" data-collapsible="accordion">
+				<li>
+					<div class="collapsible-header waves-effect">
+						<i class="large material-icons">web</i>Change Views
+					</div>
+					<div class="collapsible-body">
+						<ul class="row">
+							<li class="col s4" style="text-align: center;"><a id="listPreviewsButton" class="large material-icons waves-effect" href="#" style="font-size: 200%;">clear_all</a></li>
+							<li class="col s4" style="text-align: center;"><a id="groupPreviewsButton" class="large material-icons waves-effect" href="#" style="font-size: 200%;">view_module</a></li>
+							<li class="col s4" style="text-align: center;"><a id="carouselPreviewsButton" class="large material-icons waves-effect" href="#" style="font-size: 200%;">view_carousel</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</li>
+
+		<!-- Collapse Background Color Change -->
+		<li>
+			<div class="divider"></div>
+		</li>
+
+		<li>
+			<ul class="collapsible popout" data-collapsible="accordion">
+				<li>
+					<div class="collapsible-header waves-effect">
+						<i class="large material-icons">invert_colors</i>Background Color
+					</div>
+					<div class="collapsible-body">
+						<form action="#" class="row form1">
+							<!-- Red, Orange, Yellow -->
+							<p id="bgcc_red" id="selected" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(31, 28, 24), rgb(142, 14, 0)); ">
+								<label for="bgcc_red"></label>
+							</p>
+							<p id="bgcc_orange" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(255, 76, 5), rgb(255, 148, 96)); ">
+								<label for="bgcc_orange "></label>
+							</p>
+							<p id="bgcc_yellow" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(247, 151, 30), rgb(255, 210, 0)); ">
+								<label for="bgcc_yellow"></label>
+							</p>
+							<!--Green, Blue, Violet -->
+							<p id="bgcc_green" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(31, 97, 0), rgb(0, 255, 18)); ">
+								<label for="bgcc_green"></label>
+							</p>
+							<p id="bgcc_blue" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(0, 114, 255), rgb(0, 198, 255)); ">
+								<label for="bgcc_blue"></label>
+							</p>
+							<p id="bgcc_violet" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(106, 48, 147), rgb(160, 68, 255)); ">
+								<label for="bgcc_violet"></label>
+							</p>
+							<!-- Black, White, Grey -->
+							<p id="bgcc_black" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(0, 0, 0), rgb(67, 67, 67)); ">
+								<label for="bgcc_black"></label>
+							</p>
+							<p id="bgcc_white" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255)); ">
+								<label for="bgcc_white"></label>
+							</p>
+							<p id="bgcc_grey" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(142, 158, 171), rgb(238, 242, 243)); ">
+								<label for="bgcc_grey"></label>
+							</p>
+						</form>
+					</div>
+				</li>
+			</ul>
+		</li>
+
+		<!-- Collapse Tab Background Color Change -->
+		<li>
+			<div class="divider "></div>
+		</li>
+		<li>
+			<ul class="collapsible popout " data-collapsible="accordion ">
+				<li>
+					<div class="collapsible-header waves-effect ">
+						<i class="large material-icons ">invert_colors</i>Tab Background Color
+					</div>
+					<div class="collapsible-body ">
+						<form action="# " class="row form2 ">
+							<!-- Red, Orange, Yellow -->
+							<p id="tcc_red" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(142, 14, 0), rgb(31, 28, 24)); ">
+								<label for="tcc_red"></label>
+							</p>
+							<p id="tcc_orange" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(255, 148, 96), rgb(255, 76, 5)); ">
+								<label for="tcc_orange"></label>
+							</p>
+							<p id="tcc_yellow" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(255, 210, 0), rgb(247, 151, 30)); ">
+								<label for="tcc_yellow"></label>
+							</p>
+							<!--Green, Blue, Violet -->
+							<p id="tcc_green" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(0, 255, 18), rgb(31, 97, 0)); ">
+								<label for="tcc_green"></label>
+							</p>
+							<p id="tcc_blue" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(0, 198, 255), rgb(0, 114, 255)); ">
+								<label for="tcc_blue"></label>
+							</p>
+							<p id="tcc_violet" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(160, 68, 255), rgb(106, 48, 147)); ">
+								<label for="tcc_violet"></label>
+							</p>
+							<!-- Black, White, Grey -->
+							<p id="tcc_black" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(67, 67, 67), rgb(0, 0, 0)); ">
+								<label for="tcc_black"></label>
+							</p>
+							<p id="tcc_white" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255)); ">
+								<label for="tcc_white"></label>
+							</p>
+							<p id="tcc_grey" class="ripple rcorners col s4" style="background: -webkit-radial-gradient(rgb(238, 242, 243), rgb(142, 158, 171)); ">
+								<label for="tcc_grey"></label>
+							</p>
+						</form>
+					</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+
+</html>
+> >

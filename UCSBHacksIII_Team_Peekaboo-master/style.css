@@ -1,0 +1,135 @@
+#ourBody {
+    width: 800px;
+    height: 600px;
+    background: -webkit-radial-gradient(rgb(0, 0, 0), rgb(67, 67, 67));
+}
+
+.my_navebar_wrapper {
+    background: -webkit-radial-gradient(rgb(67, 67, 67), rgb(0, 0, 0));
+    vertical-align: middle;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+}
+
+#previewGroup {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#previewCarousel {
+    display: none;
+    width: 100%;
+    position: relative;
+}
+
+#previewList {
+    display: none;
+    width: 100%;
+    position: relative;
+}
+
+.previewGroupDiv {
+    display: inline-block;
+    background: -webkit-radial-gradient(rgb(0, 198, 255), rgb(0, 114, 255));
+    text-align: center;
+    margin: 10px;
+    height: 45%;
+    width: 45%;
+}
+
+.previewGroupImg {
+    display: inline-block;
+    margin: 1px;
+    height: 15%;
+    width: 15%;
+}
+
+.previewGroupP {
+    display: inline-block;
+    width: 90%;
+    height: 70%;
+    padding: 1px;
+    word-wrap: break-word;
+    position: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.previewCarouselDiv {
+    display: inline-block;
+    background: -webkit-radial-gradient(rgb(0, 198, 255), rgb(0, 114, 255));
+    height: 100%;
+    width: 100%;
+}
+
+.previewCarouselImg {
+    display: inline-block;
+    height: 15%;
+    width: 15%;
+}
+
+.previewCarouselP {
+    display: inline-block;
+    width: 90%;
+    height: 70%;
+    padding: 1px;
+    word-wrap: break-word;
+    position: relative;
+    overflow: hidden;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+#previewListLi {
+    display: inline-block;
+    width: 100%;
+    margin: 1%;
+    text-align: center;
+}
+
+#previewListButton {
+    display: inline-block;
+    width: 90%;
+    background: -webkit-radial-gradient(rgb(0, 198, 255), rgb(0, 114, 255));
+    word-wrap: break-word;
+    overflow: hidden;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.rcorners {
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    height: 50px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#selected {
+    height: 50px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 4px solid navy;
+}
+
+input::-webkit-input-placeholder {
+    color: white !important;
+}
