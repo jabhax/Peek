@@ -22,14 +22,8 @@ const ModalProvider = ({ children }) => {
   }, []);
 
   return (
-    <ModalContext.Provider
-      value={{
-        extensionId,
-        getExtensionId,
-        windowPosition,
-      }}
-    >
-      {children}
+    <ModalContext.Provider value={{ extensionId, getExtensionId, windowPosition, }}>
+      { children }
     </ModalContext.Provider>
   );
 };
